@@ -4,8 +4,8 @@ const onClickAddTodo = (typecode: number) => {
 	const day = document.querySelector(`.Day${typecode}Massage`) as HTMLDivElement
 	const change = prompt(`${week[typecode]} 계획을 써주세요!`)
 
-	if (!change) alert('입력되지 않았어요ㅜㅜ 다시 돌아가세요')
-	else day.innerHTML = change
+	if (!change) return alert('입력되지 않았어요ㅜㅜ 다시 돌아가세요')
+	day.innerHTML = change
 }
 
 const cheer = document.querySelector('.cheer') as HTMLDivElement
