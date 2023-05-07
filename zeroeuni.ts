@@ -6,28 +6,26 @@ const remove = document.getElementById('delete') as HTMLButtonElement
 const result = document.getElementById('addTodo--text') as HTMLInputElement
 
 function addTodo() {
-	if (!add.value) alert('내용을 입력하세요!')
-	else {
-		const list = document.createElement('li')
-		const del = document.createElement('button')
+	if (!add.value) return alert('내용을 입력하세요!')
+	
+	const list = document.createElement('li')
+	const del = document.createElement('button')
 
-		list.innerHTML = add.value
-		result.appendChild(list)
-		list.appendChild(del)
+	list.innerHTML = add.value
+	result.appendChild(list)
+	list.appendChild(del)
 
-		if (!!list) {
-			del.innerText = 'x'
-
-			del.style.cssText = 'font-size: 20px; border: none; display: flex; margin: 8px 10px 0 auto; cursor: pointer;'
-			del.addEventListener('click', deleteList)
-		}
-		add.value = '' //초기화
+	if (!!list) {
+		del.innerText = 'x'
+		del.style.cssText = 'font-size: 20px; border: none; display: flex; margin: 8px 10px 0 auto; cursor: pointer;'
+		del.addEventListener('click', deleteList)
 	}
+	add.value = '' //초기화
 }
 
 function deleteList(e: any) {
 	//삭제 버튼(x) 클릭시
-	let remove1 = e.target.parentElement //선택한 목록 한개만 지우기
+	const remove1 = e.target.parentElement //선택한 목록 한개만 지우기
 	remove1.remove()
 }
 
