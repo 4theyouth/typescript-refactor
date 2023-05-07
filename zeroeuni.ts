@@ -18,12 +18,7 @@ function addTodo() {
 		if (!!list) {
 			del.innerText = 'x'
 
-			del.style.fontSize = '20px'
-			del.style.border = 'none'
-			del.style.display = 'flex'
-			del.style.margin = '8px 10px 0 auto'
-			del.style.cursor = 'pointer'
-
+			del.style.cssText = 'font-size: 20px; border: none; display: flex; margin: 8px 10px 0 auto; cursor: pointer;'
 			del.addEventListener('click', deleteList)
 		}
 		add.value = '' //초기화
